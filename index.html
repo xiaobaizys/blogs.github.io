@@ -2,16 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的第一个网站</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>个人博客</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div>
-    <h1>欢迎来到我的网站</h1>
-    <p>这是我的第一个HTML页面。</p>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div>
+          <div class="title">Zys 的小站</div>
+          <div class="subtitle">写代码，写生活，分享想法</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search card-like">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <input id="search" placeholder="搜索文章、标签..." />
+        </div>
+        <button id="themeToggle" class="btn">切换主题</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="main">
+        <section id="posts"></section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="card about">
+          <div class="avatar">Z</div>
+          <div>
+            <div style="font-weight:700">Zys</div>
+            <div class="subtitle">前端工程师 · 业余摄影师</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:8px">标签</div>
+          <div id="tagList" class="list"></div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:8px">关于</div>
+          <div class="muted">这是一个示例个人博客页面，演示文章列表、搜索、主题切换与简单交互。</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">© 2025 Zys · Built with HTML/CSS/JS</div>
   </div>
+
+  <div id="postModal"
+    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;padding:20px">
+    <div id="postContent"
+      style="max-width:800px;width:100%;background:var(--card);padding:20px;border-radius:12px;max-height:90vh;overflow:auto">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
