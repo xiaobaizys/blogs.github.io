@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>个人博客</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Zys个人博客</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
@@ -19,6 +20,14 @@
         </div>
       </div>
 
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+          <li><a href="contact.html"><i class="fas fa-comment"></i> 留言板</a></li>
+          <li><a href="https://github.com/xiaobaizys" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+      </nav>
+
       <div class="controls">
         <div class="search card-like">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,18 +36,32 @@
           </svg>
           <input id="search" placeholder="搜索文章、标签..." />
         </div>
-        <button id="themeToggle" class="btn">切换主题</button>
+        <button id="themeToggle" class="btn"><i class="fas fa-moon"></i></button>
       </div>
     </header>
 
     <div class="layout">
       <main class="main">
-        <section id="posts"></section>
+        <section id="posts">
+          <article class="post">
+            <h2>文章标题</h2>
+            <div class="post-meta">发布于 2023-10-01 · 阅读量 100</div>
+            <p>这里是文章摘要内容，点击可以查看全文...</p>
+            <a href="#" class="read-more">阅读更多</a>
+          </article>
+
+          <article class="post">
+            <h2>另一篇文章</h2>
+            <div class="post-meta">发布于 2023-09-15 · 阅读量 85</div>
+            <p>这是另一篇文章的摘要内容...</p>
+            <a href="#" class="read-more">阅读更多</a>
+          </article>
+        </section>
       </main>
 
       <aside class="sidebar">
         <div class="card about">
-          <div class="avatar">Z</div>
+          <div class="avatar"><img src="assets/tx.jpg" alt="头像" /></div>
           <div>
             <div style="font-weight:700">Zys</div>
             <div class="subtitle">前端工程师 · 业余摄影师</div>
@@ -67,7 +90,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="src/script.js"></script>
 </body>
 
 </html>
