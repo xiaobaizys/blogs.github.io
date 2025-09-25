@@ -149,7 +149,35 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light')
 })
 
+// 滚动隐藏导航栏
+let lastScroll = 0;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    header.style.transform = 'translateY(0)';
+    return;
+  }
+  
+  if (currentScroll > lastScroll) {
+    // 向下滚动
+    header.style.transform = 'translateY(-100%)';
+  } else {
+    // 向上滚动
+    header.style.transform = 'translateY(0)';
+  }
+  lastScroll = currentScroll;
+});
+
 // init
 renderTags();
 renderPosts(posts);
+
+// 设置当前页面导航项高亮
+document.querySelectorAll('.navbar a').forEach(link => {
+  if(link.href === window.location.href || 
+     (link.getAttribute('href') && window.location.href.endsWith(link.getAttribute('href')))) {
+    link.classList.add('active');
+  }
+});
 showSlide(0);

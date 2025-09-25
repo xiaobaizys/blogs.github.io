@@ -5,12 +5,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>联系作者</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="src/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
   <div class="container">
+
     <header class="header">
       <div class="brand">
         <div class="logo">Z</div>
@@ -20,19 +21,20 @@
         </div>
       </div>
 
+
       <nav class="navbar">
         <ul>
           <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
-          <li><a href="contact.html"><i class="fas fa-comment"></i> 留言板</a></li>
+          <li><a href="contact.html"><i class="fas fa-comment"></i> 读者留言区</a></li>
           <li><a href="https://github.com/xiaobaizys" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
         </ul>
       </nav>
 
       <div class="controls">
         <div class="search card-like">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
+          <!-- <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
           </svg>
           <input id="search" placeholder="搜索文章、标签..." />
         </div>
@@ -43,26 +45,38 @@
     <div class="layout">
       <main class="main">
         <section class="contact-section">
-          <h1>联系作者</h1>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>邮箱: zys@example.com</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-github"></i>
-              <span>GitHub: github.com/zys</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-weixin"></i>
-              <span>微信: zys_wechat</span>
-            </div>
+          <h1>读者留言区</h1>
+
+          <div class="message-board">
+            <form>
+              <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" placeholder="请输入您的姓名" required>
+              </div>
+              <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" placeholder="请输入您的邮箱" required>
+              </div>
+              <div class="form-group">
+                <label for="message">留言内容</label>
+                <textarea id="message" rows="5" placeholder="请输入您的留言内容" required></textarea>
+              </div>
+              <button type="submit" class="btn">提交留言</button>
+            </form>
           </div>
 
+
+          <div class="comment-note">
+            <p>留言区说明：</p>
+            <ul>
+              <li>请文明发言，遵守网络礼仪</li>
+              <li>留言可能需要审核后显示</li>
+              <li>博主会尽快回复有价值的问题</li>
+            </ul>
+          </div>
           <div class="about-author">
-            <h2>关于作者</h2>
             <p>Zys是一名前端工程师，热爱编程和摄影。在这个博客中分享技术心得和生活感悟。</p>
-            <p>如果您有任何问题或建议，欢迎通过以上方式联系我。</p>
+            <p>如果您有任何问题或建议，欢迎通过留言板联系我。</p>
           </div>
         </section>
       </main>
@@ -71,7 +85,7 @@
     <div class="footer">© 2025 Zys · Built with HTML/CSS/JS</div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="src/script.js"></script>
 </body>
 
 </html>
